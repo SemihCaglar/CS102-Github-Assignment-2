@@ -24,10 +24,10 @@ public class assignment2 {
             choice = readAChoice();
             switch(choice){
                 case 1:
-                //will added method
+                    System.out.println("Array's minimum: "+findMinOfArray(array));
                     break;
                 case 2:
-                //will added method
+                    System.out.println("Array's maximum: "+findMaxOfArray(array));
                     break;
                 case 3:
                 //will added method
@@ -56,5 +56,28 @@ public class assignment2 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Choice: ");
         return sc.nextInt();
+    }
+
+    //finding the array's minimum
+    public static int findMinOfArray(int[] array)
+    {
+        int min=array[0];
+        for(int num:array){
+            if(num<min)
+                min=num;
+            
+        }
+        return min;
+    }
+
+    //finding the array's maximum
+    public static int findMaxOfArray(int[] array)
+    {
+        int max=array[0];
+        for(int num:array){
+            if(num>max)
+                max=num;
+        }
+        return max;
     }
 }
