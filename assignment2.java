@@ -30,7 +30,9 @@ public class assignment2 {
                     System.out.println("Array's maximum: "+findMaxOfArray(array));
                     break;
                 case 3:
-                //will added method
+                    int average = findAverage(array);
+                    System.out.println("The average of the array is " + average);
+                    displayDifferences(array, average);
                     break;
                 case 4:
                 //will added method
@@ -80,4 +82,29 @@ public class assignment2 {
         }
         return max;
     }
+    
+    //finding the average and display 
+    public static int findAverage(int[] array)
+    {
+        int sum = 0;
+        int average;
+        for(int number: array)
+        {
+            sum += number;
+        }
+        average = sum / array.length;
+        return average;
+    }
+    
+    //prints differences between elements of array and the average
+    public static void displayDifferences(int[] array, int average)
+    {
+        int[] arrayOfDifferences = new int[array.length];
+        for(int i =0 ; i < array.length; i ++)
+        {
+            arrayOfDifferences[i] = array[i] - average;
+        }
+        System.out.println("Differences between elements of array and the average is " + Arrays.toString(arrayOfDifferences));
+    }
+
 }
